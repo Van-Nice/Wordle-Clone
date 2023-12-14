@@ -1,4 +1,5 @@
 import random
+import tkinter as tk
 
 words_path = "assets/word-files/five-letter-words.txt"
 
@@ -13,6 +14,45 @@ def guess1():
         print("Invalid input, must be 5 characters and alphabetic")
         guess1()
     return guess
+
+# Graphic User Interface
+root = tk.Tk()
+
+root.geometry("500x700")
+root.title("Wordle V2")
+
+textbox_frame = tk.Frame(root)
+textbox_frame.columnconfigure(0, weight=1)
+textbox_frame.columnconfigure(1, weight=1)
+textbox_frame.columnconfigure(2, weight=1)
+textbox_frame.columnconfigure(3, weight=1)
+textbox_frame.columnconfigure(4, weight=1)
+
+# Row 1
+# Box 1
+textbox1 = tk.Text(textbox_frame, height=3, font=('Arial', 16))
+textbox1.grid(row=0, column=0, sticky=tk.W+tk.E)
+
+# Box 2
+textbox2 = tk.Text(textbox_frame, height=3, font=('Arial', 16))
+textbox2.grid(row=0, column=1, sticky=tk.W+tk.E)
+
+# Box 3
+textbox3 = tk.Text(textbox_frame, height=3, font=('Arial', 16))
+textbox3.grid(row=0, column=2, sticky=tk.W+tk.E)
+
+# Box 4
+textbox4 = tk.Text(textbox_frame, height=3, font=('Arial', 16))
+textbox4.grid(row=0, column=3, sticky=tk.W+tk.E)
+
+# Box 5
+textbox5 = tk.Text(textbox_frame, height=3, font=('Arial', 16))
+textbox5.grid(row=0, column=4, sticky=tk.W+tk.E)
+
+textbox_frame.pack(fill='x')
+
+
+root.mainloop()
 
 # create game loop
 run = True
